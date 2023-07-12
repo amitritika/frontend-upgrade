@@ -19,9 +19,6 @@ $breakpoint argument choices
 1200px = 75em;
 1800px = 112.5em;
 */
-.container {
-  margin: auto;
-}
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -586,6 +583,10 @@ p {
   font-weight: 600;
   color: #124265;
 }
+.pricing-box h3 sup {
+  top: 0.5em;
+  left: 3em;
+}
 .pricing-box h4 {
   font-size: 4rem;
   color: #2487ce;
@@ -595,8 +596,8 @@ p {
 }
 .pricing-box h4 sup {
   font-size: 2rem;
-  top: -15px;
-  left: -3px;
+  top: 1em;
+  left: 2.5em;
 }
 .pricing-box h4 span {
   color: #919191;

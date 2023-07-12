@@ -7,6 +7,7 @@ interface PricingOption {
     isAuth: boolean;
     purchaseLink: string;
     resumeBuilderLink: string;
+    classSelected? : boolean;
   }
   
   export const mockPricingOptions: PricingOption[] = [
@@ -43,6 +44,7 @@ interface PricingOption {
       isAuth: true,
       purchaseLink: "/user/payment/visualresume/pro",
       resumeBuilderLink: "/visualresume/pro",
+      classSelected: true
     },
     {
       title: "Expert",

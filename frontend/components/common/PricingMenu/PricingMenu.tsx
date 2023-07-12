@@ -12,6 +12,7 @@ interface PricingBoxProps {
   isAuth: boolean;
   purchaseLink: string;
   resumeBuilderLink: string;
+  classSelected? : boolean;
 }
 
 const PricingBox: FC<PricingBoxProps> = ({
@@ -23,10 +24,17 @@ const PricingBox: FC<PricingBoxProps> = ({
   isAuth,
   purchaseLink,
   resumeBuilderLink,
+  classSelected
 }) => {
+  let classS = "pricing-box";
+  if (classSelected) {
+    classS = classS + " " + "u-featured";
+  }
+  let discountedPrice = Math.floor(price - (price * (discount/100)));
+
   return (
     <div className="max-w-md" data-aos="zoom-in" data-aos-delay="100">
-      <div className="pricing-box">
+      <div className= {classS}>
         <h3>{title}</h3>
         <img style={{ width: '100%' }} src={imageSrc} alt="Card image cap" />
 
@@ -35,24 +43,24 @@ const PricingBox: FC<PricingBoxProps> = ({
             <sup>
               <FaRupeeSign />
             </sup>
-            250<span> / yr</span>
+            {price}<span> / yr</span>
           </h4>
         )}
         {discount !== 0 && <h3 className="">{discount}% Discount</h3>}
         {discount !== 0 && (
           <h3 style={{ color: '#ccc', textDecoration: 'line-through' }}>
             <sup>
-              <i className="fas fa-rupee-sign" />
+              <FaRupeeSign />
             </sup>
-            250<span> / yr</span>
+            {price}<span> / yr</span>
           </h3>
         )}
         {discount !== 0 && (
           <h4>
             <sup>
-              <i className="fas fa-rupee-sign" />
+              <FaRupeeSign />
             </sup>
-            {price}<span> / yr</span>
+            {discountedPrice}<span> / yr</span>
           </h4>
         )}
 

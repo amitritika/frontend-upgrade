@@ -17,7 +17,7 @@ type Story = StoryObj<typeof PricingMenu>;
 export const Template1: Story = {
     render: () => 
     <>
-    {mockPricingOptions.map((item: { title: string; imageSrc: string; discount: number; price: number; features: string[]; isAuth: boolean; purchaseLink: string; resumeBuilderLink: string; }, index: React.Key | null | undefined) => (
+    {mockPricingOptions.map((item: { title: string; imageSrc: string; discount: number; price: number; features: string[]; isAuth: boolean; purchaseLink: string; resumeBuilderLink: string; classSelected? : boolean;}, index: React.Key | null | undefined) => (
       <PricingMenu
         key={index}
         title={item.title}
@@ -28,6 +28,7 @@ export const Template1: Story = {
         isAuth = {item.isAuth}
         purchaseLink = {item.purchaseLink}
         resumeBuilderLink = {item.resumeBuilderLink}
+        classSelected={item.classSelected}
       />
     ))}
   </>
