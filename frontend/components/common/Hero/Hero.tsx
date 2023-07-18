@@ -12,7 +12,8 @@ const Hero = () => {
           </div>
         </div>
         <div className="text-center">
-          <a href="#about" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full mt-8 inline-block transition-colors duration-300">Get Started</a>
+          <a href="#about" className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-full mt-8 inline-block transition-colors duration-300 text-3xl">Get Started</a>
+          <button className="daisy-btn daisy-btn-neutral">Neutral</button>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-24">

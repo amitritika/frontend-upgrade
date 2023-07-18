@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from './Header/Header';
+import HeaderUpdated from './HeaderUpdated/HeaderUpdated';
 import { isAuth } from '../actions/auth';
 interface LayoutProps {
 children: React.ReactNode;
@@ -9,8 +9,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 return (
 <React.Fragment>
 
-    {isAuth() && <Header isAuth = {true} role = {isAuth().role} />}
-    {!isAuth() && <Header isAuth = {false} />}
+    {isAuth() && <HeaderUpdated isAuth = {true} role = {isAuth().role} />}
+    {!isAuth() && <HeaderUpdated isAuth = {false} />}
 {children}
 </React.Fragment>
 );

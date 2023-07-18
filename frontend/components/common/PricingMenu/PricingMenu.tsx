@@ -33,7 +33,7 @@ const PricingBox: FC<PricingBoxProps> = ({
   let discountedPrice = Math.floor(price - (price * (discount/100)));
 
   return (
-    <div className="max-w-md" data-aos="zoom-in" data-aos-delay="100">
+    <div className="max-w-md" data-aos="zoom-in" data-aos-delay="100" style={{margin: "auto"}}>
       <div className= {classS}>
         <h3>{title}</h3>
         <img style={{ width: '100%' }} src={imageSrc} alt="Card image cap" />
@@ -83,8 +83,8 @@ const PricingBox: FC<PricingBoxProps> = ({
       <div
         style={{ width: '100%', textAlign: 'center', marginTop: '10px' }}
       >
-        <a href={resumeBuilderLink} className="button-menu">
-          Fresher Resume Builder
+        <a href={resumeBuilderLink} className={classSelected ? "button-menu": "button-menu-f"}>
+          {title} Resume Builder
         </a>
       </div>
     </div>

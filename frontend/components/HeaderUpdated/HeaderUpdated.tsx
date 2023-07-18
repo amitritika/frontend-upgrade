@@ -214,7 +214,19 @@ function NavList() {
           Visual Resume
         </ListItem>
       </Typography>
-      <NavListMenu />
+
+      <Typography
+        as="a"
+        href="#"
+        variant="large"
+        color="blue-gray"
+        className="font-normal"
+      >
+        <ListItem className="flex items-center gap-2 py-2 pr-4">
+          <FolderIcon className="h-[18px] w-[18px]" />
+          Blogs
+        </ListItem>
+      </Typography>
     </List>
   );
 }

@@ -26,7 +26,7 @@ interface SignInProps {
       password: ""
     })
 
-    if (status === 'loading') return <h1> loading... please wait</h1>;
+    if (status === 'loading') return <h1></h1>;
     if (status === 'authenticated') {
       return (
         <div>

@@ -111,6 +111,10 @@ p {
   font-size: 1.6rem;
 }
 
+.container {
+  margin: auto;
+}
+
 .u-bullet-left {
   width: 1rem;
   height: 1rem;
@@ -222,6 +226,10 @@ p {
   margin-right: 8rem;
 }
 
+.u-margin-auto {
+  margin: auto;
+}
+
 .u-padding-bottom-small {
   padding-bottom: 1.5rem;
 }
@@ -312,7 +320,7 @@ p {
 
 .button-menu {
   display: inline-block;
-  padding: 10px 40px;
+  padding: 10px 10px;
   border-radius: 6px;
   color: #3194db;
   transition: none;
@@ -322,6 +330,7 @@ p {
   font-weight: 600;
   transition: 0.3s;
   border: 2px solid #3194db;
+  width: 100%;
 }
 .button-menu:hover {
   background: #3194db;
@@ -329,7 +338,7 @@ p {
 }
 .button-menu-f {
   display: inline-block;
-  padding: 10px 40px;
+  padding: 10px 10px;
   border-radius: 6px;
   transition: none;
   font-size: 1.6rem;
@@ -340,6 +349,7 @@ p {
   border: 2px solid #3194db;
   background: #3194db;
   color: #fff;
+  width: 100%;
 }
 .button-menu-f:hover {
   color: #3194db;

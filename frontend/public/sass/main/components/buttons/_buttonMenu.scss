@@ -1,6 +1,6 @@
 .button-menu {
   display: inline-block;
-  padding: 10px 40px;
+  padding: 10px 10px;
   border-radius: 6px;
   color: $color-primary-light;
   transition: none;
@@ -10,6 +10,7 @@
   font-weight: 600;
   transition: 0.3s;
   border: 2px solid $color-primary-light;
+  width: 100%;
   
   &:hover {
     background: $color-primary-light;
@@ -18,7 +19,7 @@
   
   &-f{
     display: inline-block;
-    padding: 10px 40px;
+    padding: 10px 10px;
     border-radius: 6px;
     transition: none;
     font-size: $defualt-font-size;
@@ -29,6 +30,7 @@
     border: 2px solid $color-primary-light;
     background: $color-primary-light;
     color: $color-white;
+    width: 100%;
     
     &:hover {
       color: $color-primary-light;
