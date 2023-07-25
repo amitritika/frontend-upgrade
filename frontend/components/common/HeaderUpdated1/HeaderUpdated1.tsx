@@ -13,10 +13,10 @@ interface HeaderProps {
   const router = useRouter();
  
   return (
-    <div className="daisy-navbar bg-red">
+    <div className="daisy-navbar">
     <div className="daisy-navbar-start">
       <div className="h-12 w-12">
-        <img className = "rounded-full" src="/images/Logo.PNG"></img>
+        <img className = "rounded-full" src="/images/Logo.png"></img>
       </div>
       <div className="daisy-dropdown">
         <label tabIndex={0} className="daisy-btn daisy-btn-ghost lg:hidden">
@@ -37,7 +37,7 @@ interface HeaderProps {
       </div>
       <a className="daisy-btn daisy-btn-ghost normal-case text-xl">CAREER A+</a>
     </div>
-    <div className="daisy-navbar-center hidden lg:flex">
+    <div className="daisy-navbar-center hidden lg:flex z-10">
       <ul className="daisy-menu daisy-menu-horizontal px-1 text-xl">
         <li><Link className="text-xl" href = "/visualresume">Visual Resume</Link></li>
         <li tabIndex={0}>

@@ -1,0 +1,79 @@
+.button-sideNavigation {
+  font-weight: 500;
+  font-size: $defualt-font-size;
+  letter-spacing: 0.5px;
+  display: flex;
+  padding: 1rem;
+  transition: 0.5s;
+  margin-top: 1rem;
+  color: $color-grey-dark;
+  background: $color-white;
+  align-items: center;
+  justify-content: space-between;
+  width: 20rem;
+
+  svg{
+    margin-left: 1rem;
+  }
+  
+  &:hover{
+    background: $color-grey-dark;
+    color: $color-white;
+  }
+
+  &__clicked{
+    font-weight: 500;
+    font-size: $defualt-font-size;
+    letter-spacing: 0.5px;
+    display: flex;
+    padding: 1rem;
+    transition: 0.5s;
+    margin-top: 1rem;
+    color: $color-white;
+    background: $color-grey-light-2;
+    align-items: center;
+    justify-content: space-between;
+    width: 20rem;
+    
+    &:hover{
+      background: $color-grey-dark;
+      color: $color-white;
+    }
+  }
+
+  &--icon{
+    font-weight: 500;
+    font-size: $defualt-font-size;
+    letter-spacing: 0.5px;
+    padding: 1rem;
+    transition: 0.5s;
+    margin-top: 1rem;
+    color: $color-grey-dark;
+    background: $color-white;
+    width: 5rem;
+    display: flex;
+    justify-content: center;
+
+    &__clicked{
+      font-weight: 500;
+      font-size: $defualt-font-size;
+      letter-spacing: 0.5px;
+      padding: 1rem;
+      transition: 0.5s;
+      margin-top: 1rem;
+      color: $color-white;
+      background: $color-grey-light-2;
+      width: 5rem;
+      display: flex;
+      justify-content: center;
+      
+      &:hover{
+        background: $color-grey-dark;
+        color: $color-white;
+      }
+    }
+  }
+  
+}
+
+

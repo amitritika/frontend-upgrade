@@ -426,6 +426,76 @@ p {
   color: #fff;
 }
 
+.button-sideNavigation {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  padding: 1rem;
+  transition: 0.5s;
+  margin-top: 1rem;
+  color: #777;
+  background: #fff;
+  align-items: center;
+  justify-content: space-between;
+  width: 20rem;
+}
+.button-sideNavigation svg {
+  margin-left: 1rem;
+}
+.button-sideNavigation:hover {
+  background: #777;
+  color: #fff;
+}
+.button-sideNavigation__clicked {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  display: flex;
+  padding: 1rem;
+  transition: 0.5s;
+  margin-top: 1rem;
+  color: #fff;
+  background: #c5bfbf;
+  align-items: center;
+  justify-content: space-between;
+  width: 20rem;
+}
+.button-sideNavigation__clicked:hover {
+  background: #777;
+  color: #fff;
+}
+.button-sideNavigation--icon {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+  transition: 0.5s;
+  margin-top: 1rem;
+  color: #777;
+  background: #fff;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+}
+.button-sideNavigation--icon__clicked {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  padding: 1rem;
+  transition: 0.5s;
+  margin-top: 1rem;
+  color: #fff;
+  background: #c5bfbf;
+  width: 5rem;
+  display: flex;
+  justify-content: center;
+}
+.button-sideNavigation--icon__clicked:hover {
+  background: #777;
+  color: #fff;
+}
+
 .icon-box-1 {
   padding: 5rem 3rem;
   position: relative;
