@@ -2,8 +2,7 @@
 import Head from 'next/head';
 import Layout from "@/components/Layout";
 import Private from '@/components/auth/Private';
-import SideNavigationButton from "@/components/common/SideNavigationButton/SideNavigationButton";
-import SideNavigationIcon from "@/components/common/SideNavigationIcon/SideNavigationIcon";
+import AccountInformation from "@/components/user/AccountInformation"
 import { FaCogs, FaFile, FaUser, FaVideo, FaCalendar  } from "react-icons/fa"
 import Sidebar from '@/components/Sidebar/Sidebar';
 import {useState, useEffect} from 'react';
@@ -69,7 +68,7 @@ const Index = () => {
                                 Welcome {user.name}
                             </div>
                             <div>
-                                {account.clicked && <h1>Account Setting</h1>}
+                                {account.clicked && <AccountInformation />}
                                 {visualresume.clicked && <h1>Visual Resume</h1>}
                                 {profile.clicked && <h1>Profile</h1>}
                                 {video.clicked && <h1>Video</h1>}
