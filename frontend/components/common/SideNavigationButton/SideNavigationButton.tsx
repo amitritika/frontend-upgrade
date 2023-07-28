@@ -3,14 +3,19 @@ import { ReactNode } from "react";
 interface SideNavigationButtonProps {
     icon: ReactNode;
     text: string;
-    onClick?: (event: React.MouseEvent<HTMLElement>) => void; 
+    onClickButton: (name: string) => void; 
     clicked: boolean;
+    value: string;
 }
 
-const SideNavigationButton = ({ icon, text, onClick, clicked }: SideNavigationButtonProps) => {
+const SideNavigationButton = ({ icon, text, onClickButton, clicked, value }: SideNavigationButtonProps) => {
     let classSelected = clicked ? "button-sideNavigation__clicked" : "button-sideNavigation"
+    const handelClick = () => {
+        onClickButton(value);
+
+    }
     return (
-        <button className = {classSelected} onClick={onClick}>
+        <button className = {classSelected} onClick={handelClick}>
             {text}
             {icon}
         </button>

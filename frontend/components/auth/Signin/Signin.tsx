@@ -83,7 +83,7 @@ interface SignInProps {
       // authenticate user
       toast.success("Logged In Successfully");
       authenticate(data, () => {
-        router.push(`/`);
+        router.push(`/user`);
       });
     }
   })

@@ -1,10 +1,10 @@
 
 import Head from 'next/head';
 import Layout from "@/components/Layout";
-import Private from '@/components/auth/Private';
+import Admin from '@/components/auth/Admin';
 import SideNavigationButton from "@/components/common/SideNavigationButton/SideNavigationButton";
 import SideNavigationIcon from "@/components/common/SideNavigationIcon/SideNavigationIcon";
-import { FaCogs, FaFile, FaUser, FaVideo, FaCalendar  } from "react-icons/fa"
+import { FaFile, FaHashtag, FaThList, FaPercent, FaFileImage } from "react-icons/fa"
 import Sidebar from '@/components/Sidebar/Sidebar';
 import {useState, useEffect} from 'react';
 import { isAuth } from '../../actions/auth';
@@ -19,24 +19,24 @@ type secObject = {
     icon: ReactNode;
 }
 type sec = {
-    account: secObject;
-    visualresume: secObject;
-    profile: secObject;
-    video: secObject;
-    examplan: secObject;
+    blogs: secObject;
+    tags: secObject;
+    category: secObject;
+    discount: secObject;
+    images: secObject;
     [key: string]: any;
   };
 const Index = () => {
  const [user, setUser] = useState(null || Object)
  const { data, status } = useSession();
  const [section, setSection]= useState<sec>({
-    account: {value: "account", clicked: true, title: "Account Settings", icon: <FaCogs />},
-    visualresume: {value: "visualresume", clicked: false, title: "Visual Resume", icon: <FaFile />},
-    profile: {value: "profile", clicked: false, title: "Profile", icon: <FaUser />},
-    video: {value: "video", clicked: false, title: "Video", icon: <FaVideo />},
-    examplan: {value: "examplan", clicked: false, title: "Examplan", icon: <FaCalendar />},
+    blogs: {value: "blogs", clicked: true, title: "Blogs", icon: <FaFile />},
+    tags: {value: "tags", clicked: false, title: "Blogs Tags", icon: <FaHashtag />},
+    category: {value: "category", clicked: false, title: "Blogs Category", icon: <FaThList />},
+    discount: {value: "discount", clicked: false, title: "Discount", icon: <FaPercent />},
+    images: {value: "images", clicked: false, title: "Images OG", icon: <FaFileImage />},
  })
- const { account, visualresume, profile, video, examplan } = section;
+ const { blogs, tags, category, discount, images } = section;
  useEffect(() => {
    if (isAuth()){
      setUser(isAuth());
@@ -46,11 +46,11 @@ const Index = () => {
     const handleSection = (name: string) => {
         console.log(section);
        let currentSec = section;
-       currentSec.account.clicked = false;
-       currentSec.visualresume.clicked = false;
-       currentSec.profile.clicked = false;
-       currentSec.video.clicked = false;
-       currentSec.examplan.clicked =  false;
+       currentSec.blogs.clicked = false;
+       currentSec.tags.clicked = false;
+       currentSec.category.clicked = false;
+       currentSec.discount.clicked = false;
+       currentSec.images.clicked =  false;
        currentSec[name].clicked = true;
        setSection({...section, currentSec});
         
@@ -59,7 +59,7 @@ const Index = () => {
     return (
         <React.Fragment>
             <Layout>
-                <Private>
+                <Admin>
                     <div className='flex'>
                         <div className=''>
                             <Sidebar sec = {section} handleSection={handleSection}/>
@@ -69,16 +69,16 @@ const Index = () => {
                                 Welcome {user.name}
                             </div>
                             <div>
-                                {account.clicked && <h1>Account Setting</h1>}
-                                {visualresume.clicked && <h1>Visual Resume</h1>}
-                                {profile.clicked && <h1>Profile</h1>}
-                                {video.clicked && <h1>Video</h1>}
-                                {examplan.clicked && <h1>Examplan</h1>}
+                                {blogs.clicked && <h1>Blogs</h1>}
+                                {category.clicked && <h1>Category</h1>}
+                                {tags.clicked && <h1>Tags</h1>}
+                                {discount.clicked && <h1>Coupon Discount Code</h1>}
+                                {images.clicked && <h1>OG</h1>}
                             </div>
                         </div>
                     </div>
 
-                </Private>
+                </Admin>
             </Layout>
         </React.Fragment>
   

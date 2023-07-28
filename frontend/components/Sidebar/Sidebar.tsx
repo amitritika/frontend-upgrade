@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import SideNavigationButton from "../common/SideNavigationButton/SideNavigationButton";
 import SideNavigationIcon from "../common/SideNavigationIcon/SideNavigationIcon";
@@ -7,31 +7,49 @@ import { FaCogs, FaFile, FaUser, FaVideo, FaCalendar  } from "react-icons/fa"
 import { HiOutlineX, HiOutlineMenu } from "react-icons/hi";
 import { IconButton } from "@material-tailwind/react";
 
-const SideBarList = () => {
+export const SideBarList: React.FC<SidebarProps> = ({ sec, handleSection })  => {
+  const list = Object.keys(sec).map((key) => {
+        const c = sec[key];
+        return (
+          <SideNavigationButton icon = {c.icon} clicked = {c.clicked} text = {c.title} onClickButton = {handleSection} value = {c.value}/>
+        )
+  });
   return (
     <div className="w-80 bg-gray-50 h-screen pt-4">
-      <SideNavigationButton icon = {<FaCogs />} text = "User Settings" clicked = {false} />
-      <SideNavigationButton icon = {<FaCogs />} text = "User Settings" clicked = {false} />
-      <SideNavigationButton icon = {<FaCogs />} text = "User Settings" clicked = {false} />
-      <SideNavigationButton icon = {<FaCogs />} text = "User Settings" clicked = {false} />
-      <SideNavigationButton icon = {<FaCogs />} text = "User Settings" clicked = {false} />
+      {list}
     </div>
   )
 }
 
-const SideBarListIcons = () => {
+export const SideBarListIcons: React.FC<SidebarProps> = ({ sec, handleSection  }) => {
+  const list = Object.keys(sec).map((key) => {
+    const c = sec[key];
+    return (
+      <SideNavigationIcon icon = {c.icon} clicked = {c.clicked} onClickButton = {handleSection} value = {c.value}/>
+    )
+});
   return (
     <div className="w-20 bg-gray-50 h-screen pt-4">
-      <SideNavigationIcon icon = {<FaCogs />} clicked = {false} />
-      <SideNavigationIcon icon = {<FaCogs />} clicked = {false} />
-      <SideNavigationIcon icon = {<FaCogs />} clicked = {false} />
-      <SideNavigationIcon icon = {<FaCogs />} clicked = {false} />
-      <SideNavigationIcon icon = {<FaCogs />} clicked = {false} />
+      {list}
     </div>
   )
 }
 
-  const Sidebar = () => {
+type secObject = {
+  value: string;
+  clicked: boolean;
+  title: string;
+  icon: ReactNode;
+}
+interface sec {
+  [key: string]: any;
+}
+interface SidebarProps {
+  sec: sec;
+  handleSection: (name: string)=>void;
+}
+
+  const Sidebar: React.FC<SidebarProps> = ({ sec, handleSection }) => {
     const [openNav, setOpenNav] = useState(false);
  
     useEffect(() => {
@@ -57,13 +75,13 @@ const SideBarListIcons = () => {
           )}
         </IconButton>
         <div className="hidden lg:flex">
-          <SideBarList />
+          <SideBarList sec={sec} handleSection={handleSection}/>
         </div>
         {!openNav && <div className="">
-          <SideBarListIcons />
+          <SideBarListIcons sec={sec} handleSection={handleSection}/>
         </div>}
         {openNav && <div className="">
-          <SideBarList />
+          <SideBarList sec={sec} handleSection={handleSection}/>
         </div>}
       </div>
     );
